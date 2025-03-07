@@ -57,3 +57,15 @@ def cart(request):
 
 def about(request):
     return render(request,'about.html')
+
+def soft(request):
+    return render(request,'soft.html')
+
+def dm(request):
+    return render(request,'dm.html')
+
+def f_m(request):
+    return render(request, 'f_m.html')
+
+def softdev(request):
+    return render(request, 'softdev.html')

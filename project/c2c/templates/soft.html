@@ -1,0 +1,331 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Power BI Course</title>
+<style>
+    body {
+        background-color: #1e3a8a; /* Dark blue background */
+        color: #ffffff; /* White text */
+    }
+    
+    .bg-background {
+        background-color: #1e3a8a; /* Dark blue */
+    }
+    
+    .text-foreground {
+        color: #ffffff; /* White */
+    }
+    
+    .text-muted-foreground {
+        color: #cbd5e1; /* Light gray */
+    }
+    
+    .bg-secondary {
+        background-color: #fbbf24; /* Yellow */
+    }
+    
+    .text-secondary-foreground {
+        color: #1e3a8a; /* Dark blue */
+    }
+    
+    .hover-text-orange-500:hover {
+        color: #ff8c00; /* Orange on hover */
+    }
+    
+    .container {
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .header {
+        margin-bottom: 2rem;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ff8c00; /* Orange */
+        margin: 0.5rem 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #cbd5e1;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        color: #ff8c00;
+    }
+    
+    .chat-button {
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        background-color: #1e3a8a;
+        color:white;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+    .chat-button.hover-text-orange-500:hover{
+        color: #000;
+    }
+
+    /* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    width: 25%;
+    min-width: 260px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #d87070;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #2ebf91;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 0 8px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icons a.face{
+    color: #1877F2;
+}
+.social-icons a.face:hover{
+    color: #0d5cd6;
+}
+.social-icons a.x{
+    color: #000000;       
+ }
+ .social-icons a.x:hover{
+    color: #333333;        }
+    .social-icons a.insta {
+        color: #E4405F;
+    }
+    .social-icons a.insta:hover {
+        color: #D02D4E; 
+    }
+    .social-icons a.linkedin {
+        color: #0077B5;
+    }
+    .social-icons a.linkedin:hover {
+        color: #005582; 
+    }
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+    
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Master data visualization</h1>
+        <h1>and Data analytics with</h1>
+        <h1>Power BI.</h1>
+    </div>
+
+    <div style="background-color: #1e3a8a; padding: 1rem; display: flex; justify-content: center; gap: 1rem;">
+        <button style="background-color: #ff9800; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; cursor: pointer; transition: background-color 0.3s;" 
+                onmouseover="this.style.backgroundColor='rgba(255,152,0,0.8)'" 
+                onmouseout="this.style.backgroundColor='#ff9800'">
+          Course Overview
+        </button>
+        
+        <a href="power_bi_tutorial.pdf" download 
+           style="background-color: #ff9800; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: background-color 0.3s;" 
+           onmouseover="this.style.backgroundColor='rgba(255,152,0,0.8)'" 
+           onmouseout="this.style.backgroundColor='#ff9800'">
+          Course Syllabus
+        </a>
+      </div>
+      
+    <div class="chat-button" id="chatButton">Need Help? Chat with us</div>
+</div>
+
+<div style="max-width: 90rem; margin: 0 auto; padding: 1.5rem; background-color: white; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 style="font-size: 1.5rem; font-weight: bold; color: #1e293b; margin-bottom: 1rem;">
+      Power BI Training in Chennai
+    </h2>
+    <p style="color: #475569; line-height: 1.6;">
+      Are you searching for a stage to learn about Microsoft Power BI? Here we go, BITA provides
+      <span style="color: #1e40af; font-weight: 600;">
+        Power BI Training in campus2career
+      </span> 
+      in global standards. Our Mentor helps you learn Power BI concepts such as Microsoft Power BI desktop layouts, BI reports, dashboards, Power BIDAX commands, and features. You’ll learn how to experiment, modify, prepare, and present your data quickly and easily. We will assist you in getting the maximum out of Power BI, permitting you to remedy commercial enterprise issues and enhance operations. This route allows you to grasp the improvement of dashboards from posted reports, find out higher perception from the data, & create sensible recipes for the numerous responsibilities you could do with Microsoft Power BI.
+    </p>
+  </div>
+  <br>
+  <br>
+
+
+
+  <div style="max-width: 90rem; margin: 0 auto; padding: 1.5rem; background-color: #ffffff; color: #1f2937; border-radius: 1rem;">
+  <h1 style="font-size: 1.875rem; font-weight: bold; margin-bottom: 1rem;">
+    What is Power BI?
+  </h1>
+  <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+    Power BI is a collection of software services, apps, and connectors that work together to transform independent data sources into immersive, interactive insights. The data can be an Excel
+    spreadsheet or a collection of cloud-based on-premises hybrid data warehouses. It's easy to connect to data sources, visualize and discover important data, and share it with anyone.
+  </p>
+  <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">
+    Elements of Power BI
+  </h2>
+  <ul style="list-style-type: disc; padding-left: 1rem;">
+    <li style="margin-bottom: 0.5rem;">
+      <strong>PowerBI Desktop</strong> – A Windows desktop application called PowerBI Desktop. Power BI Desktop is designed to create, share, and use most effectively for you and your role.
+    </li>
+    <li style="margin-bottom: 0.5rem;">
+      <strong>PowerBI Service</strong> – An online software (SaaS) service called PowerBI Service.
+    </li>
+    <li style="margin-bottom: 0.5rem;">
+      <strong>PowerBI mobile app</strong> for Windows, iOS, and Android devices.
+    </li>
+    <li style="margin-bottom: 0.5rem;">
+      <strong>Power BI Report Builder</strong> creates a paginated report to share with the Power BI service.
+    </li>
+    <li style="margin-bottom: 0.5rem;">
+      <strong>Power BI Report Server</strong> is a local report server that allows you to publish Power BI reports after creating them in PowerBI Desktop.
+    </li>
+  </ul>
+</div>
+
+
+<div style="width: 90%; margin: 2rem auto; padding: 2rem; background-color: #ffffff; border-radius: 2rem; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+    <h2 style="font-size: 2rem; font-weight: bold; color: #1d4ed8; margin-bottom: 1.5rem; text-align: center;">
+      Job Openings in Power BI
+    </h2>
+    <p style="color: #6b7280; margin-bottom: 2rem; line-height: 1.8; font-size: 1.1rem; text-align: justify;">
+      Power BI provides businesses with robust analytics and reporting capabilities and is an excellent career option in this increasingly database-driven economy. Most companies collect a lot of data
+      and experiment with visualizations, and Power BI can provide the best insights. The future of data analysis is bright, especially as organizations are flooded with data and looking for more unique
+      ways to visualize it. Embarking on a Power BI-based career can also ensure success in business intelligence and help your organization’s data analytics needs. With proper planning and
+      coordination, you can become a competent business analyst in your organization when using Power BI. The average pay scale for Power BI developers in India is Rs. 2-4 LPA. The revenue potential of
+      experienced Power BI developers is incredible.
+    </p>
+    <div style="text-align: center;">
+      <a href="#" style="color: #4f46e5; font-weight: 600; text-decoration: none; font-size: 1.2rem;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+        Sign up for Power BI Training in campus2career
+      </a>
+    </div>
+  </div>
+
+  
+  <footer id="footer">
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Campus 2 Career connects job seekers with top employers, offering career opportunities across IT, non-IT, and various industries.</p>
+        </div>
+        <div class="footer-section categories">
+            <h3>Course Categories</h3>
+            <ul>
+                <li><a href="#">Software Development</a></li>
+                <li><a href="#">Digital Marketing</a></li>
+                <li><a href="#">Finance & Accounting</a></li>
+                <li><a href="#">Data Analytics</a></li>
+            </ul>
+        </div>
+        <div class="footer-section resources">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#">Resume Tips</a></li>
+                <li><a href="#">Interview Preparation</a></li>
+                <li><a href="#">Practice session</a></li>
+                <li><a href="#">Career Advice</a></li>
+                <li><a href="{% url 'job' %}">Job Alerts</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@campus2career.com</p>
+            <p>Phone: +91 86085 45663</p>
+            <p>Address: 131 2nd St, KK Nagar, Chennai-600078</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/zoho" class="face"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/Zoho" class="x"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/zoho/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/zoho?igsh=ejJvOTluNG1yNHZw" class="insta"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Campus 2 Career | All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script>
+    document.getElementById('chatButton').addEventListener('click', function() {
+        window.open('https://wa.me/your-number', '_blank');
+    });
+</script>
+
+</body>
+</html>
