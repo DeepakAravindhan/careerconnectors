@@ -1,0 +1,126 @@
+  {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus 2 Career</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo1.png'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-l">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo1.png' %}" alt="img">
+            </a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'syllabus' %}">Courses</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+            <li>
+               
+                <a href="{% url 'signup' %}" class="signup-btn"><i class="fa-solid fa-right-from-bracket"></i>Signup</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Your Path to Success</h1>
+                <p>Explore our courses, build your skills, and discover job opportunities tailored just for you. <br >Your dream career is within reach—let’s make it happen together!</p>
+                <a href="{% url 'syllabus' %}">Get Started</a>
+            </div>
+            <img src="https://i.pinimg.com/736x/98/6c/2c/986c2c30862980a8ac45140555da9d56.jpg" alt="jpg" class="heroine">
+        </section>
+        <section class="courses">
+            <h2 style="margin-top: -50px; margin-bottom: 15px;">Top Rated Courses</h2>
+            <div class="course-container">
+                <div class="course-card">
+                    <img src="https://imgs.search.brave.com/AgQ39c1NKOZpXXF_MdLi6KZmmGzGcCACKWQBQdN0-H0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzY1LzI1LzQ5/LzM2MF9GXzI2NTI1/NDkxNV9SRjNjQ1hy/VVhkNzUyVGxDRTA2/R2dYZkxEcHh4ZjVn/eC5qcGc" alt="AI">
+                    <h3>Artificial Intelligence</h3>
+                    <p>Artificial Intelligence (AI) is transforming industries by enabling machines to learn, adapt, and make decisions, driving innovation and efficiency across various sectors.</p>
+                    <a href="https://www.geeksforgeeks.org/What-is-ai-artificial-intelligence/?ref=header_ind">More About</a>
+                </div>
+                <div class="course-card">
+                    <img src="https://imgs.search.brave.com/zt-fuvQ3YbIuK1RWJhTEqv7a3QAduH9cJbF6T_vHBWY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1Lzc3Lzk5LzU0/LzM2MF9GXzU3Nzk5/NTQ4Ml9iNjBNMEp1/YnNMZmh6bEtBZlh0/a2VVMkdnQVpwaVN6/Uy5qcGc" alt="java">
+                    <h3>Java Full Stack</h3>
+                    <p>Java Full Stack Development empowers developers to build scalable web applications by mastering both front-end and back-end technologies using Java.</p>
+                    <a href="https://www.geeksforgeeks.org/java-full-stack/" style="margin-top: 15px;">More About</a>
+                </div>
+                <div class="course-card">
+                    <img src="https://imgs.search.brave.com/92Zb7nOaYF76EqegsNqoiz2aKwN8HeO0IbLCyzW5i1Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9kYXRhLXNjaWVu/Y2UtYnVzaW5lc3Mt/aW50ZXJuZXQtdGVj/aG5vbG9neS1jb25j/ZXB0LXNlcnZlci1y/b29tLWJhY2tncm91/bmRfMTYxNDUyLTk3/NTguanBnP3NlbXQ9/YWlzX2h5YnJpZA" alt="Course 3">
+                    <h3>Data Science</h3>
+                    <p>Data Science combines statistical analysis, machine learning, and data visualization to extract valuable insights and drive data-driven decisions.</p>
+                    <a href="https://www.geeksforgeeks.org/data-science/" style="margin-top: 15px;">More About</a>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="jobs">
+            <h2>Explore Job Opportunities</h2>
+            <p>Discover job listings from top companies in various industries.</p>
+            <a href="{% url 'job' %}">View Jobs</a>
+        </section> -->
+    </div>
+    <div class="future">
+        <h1>Get Hired!</h1>
+        <h2>Your Future Awaits</h2>
+        <center><p class="text">Transform your academic achievements into a thriving career. With
+             our platform, you'll find opportunities that match your skills and 
+             aspirations. Let's make it happen!</p></center>
+        <center><a href="{% url 'job'%}" class="button-s">Start Now</a></center></div>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Campus 2 Career connects job seekers with top employers, offering career opportunities across IT, non-IT, and various industries.</p>
+            </div>
+            <div class="footer-section categories">
+                <h3>Course Categories</h3>
+                <ul>
+                    <li><a href="#">Software Development</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Finance & Accounting</a></li>
+                    <li><a href="#">Data Analytics</a></li>
+                </ul>
+            </div>
+            <div class="footer-section resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Resume Tips</a></li>
+                    <li><a href="#">Interview Preparation</a></li>
+                    <li><a href="#">Practice session</a></li>
+                    <li><a href="#">Career Advice</a></li>
+                    <li><a href="{% url 'job' %}">Job Alerts</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@campus2career.com</p>
+                <p>Phone: +91 86085 45663</p>
+                <p>Address: 131 2nd St, KK Nagar, Chennai-600078</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/zoho" class="face"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/Zoho" class="x"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/zoho/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/zoho?igsh=ejJvOTluNG1yNHZw" class="insta"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Campus 2 Career | All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("mobile-menu").addEventListener("click", () => {
+            document.getElementById("nav-links").classList.toggle("active");
+        });
+
+    </script>
+</body>
+</html>

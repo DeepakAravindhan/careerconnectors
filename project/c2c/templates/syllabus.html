@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2C | COURSES</title>
+    <link rel="stylesheet" href="{%static 'css/sylla.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="{% static 'images/logo1.png'%}">
+
+
+    
+    <style>
+      
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #F0F8FF; 
+      }
+      .container {
+        padding: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: -150px;
+      }
+      .heading {
+        font-size: 40px;
+        color:  #333333;
+        font-weight: 700;
+        margin-top:20px ;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      .card {
+        background-color: #b4a8a8;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        height: 300px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .card-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+      .card-header img {
+        width:280px;
+        height: 110px;
+        margin-top:-10px;
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        
+      }
+      .card-title {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 1.125rem;
+        font-weight: 600;
+      }
+      
+      
+      .description {
+        color: #484949;
+        margin-bottom: 1rem;
+        margin-top:-15px;
+        font-size: 14px;
+      }
+      .button {
+        background-color: #edf2f7;
+        color: #000204;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        cursor: pointer;
+        border: 2px solid black;
+        margin-top: -1px;
+        margin-right:20px;
+      }
+      .center {
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+      .view-all {
+        background-color: #4299e1;
+        color: #ffffff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        border: none;
+      }
+      .view-all:hover{
+        background-color: #0c497a;
+      }
+  
+
+.logo-l a{
+    display:flex;
+    justify-content: flex-start;
+    width: 200px;
+    height: 150px;
+    position: relative;
+    top: -20px;
+   
+}.nav-links{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    top:-140px;
+    margin-right: 65px;
+}
+
+
+.nav-links li{
+    margin-left: 20px;
+}
+.nav-links li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 10px;
+    transition: 0.3s ease;
+}
+.nav-links li a:hover{
+    color: #0ca9ba;
+    
+
+    
+}
+button a{
+  text-decoration: none;
+  color: #000204;
+}
+
+.hi button:hover{
+  cursor: pointer;
+  border-radius: 25px;
+  color: #000204;
+  background-color: white;
+  border: #0c497a;
+}
+.hi{
+  border-radius: 15px;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -90px;
+ }
+ .hi button{
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000204;
+  background-color: white;
+ }
+ .open-btn{
+  color: black;
+ }
+ footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  width: 25%;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #d87070;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #2ebf91;
+}
+
+.social-icons a {
+  font-size: 20px;
+  margin: 0 8px;
+  color: white;
+  transition: 0.3s;
+}
+
+.social-icons a.face{
+  color: #1877F2;
+}
+.social-icons a.face:hover{
+  color: #0d5cd6;
+}
+.social-icons a.x{
+  color: #000000;       
+}
+.social-icons a.x:hover{
+  color: #333333;        }
+  .social-icons a.insta {
+      color: #E4405F;
+  }
+  .social-icons a.insta:hover {
+      color: #D02D4E; 
+  }
+  .social-icons a.linkedin {
+      color: #0077B5;
+  }
+  .social-icons a.linkedin:hover {
+      color: #005582; 
+  }
+  
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  font-size: 14px;
+  color: #aaa;
+}
+footer{
+  margin-bottom: -100%;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+          <div class="logo-l"><a href="index.html"><img src="logo.png" alt="img" ></a></div>
+          <div class="logo"></div>
+          
+          
+      </nav>
+    
+      <!-- text-align: center; display: flex;justify-content: flex-end;margin-top: -75px; --> 
+
+      <script>
+          const mobileMenu = document.getElementById("mobile-menu");
+          const navLinks = document.getElementById("nav-links");
+          
+          mobileMenu.addEventListener("click", () => {
+              navLinks.classList.toggle("active");
+          });
+          
+      </script>
+      </header>
+    <div class="container">
+      <h2 class="heading" style="text-align: center;">POPULAR COURSES</h2>      
+      <h2 class="heading"><a href="{% url 'cart'%}" class="hi"><button><i class="fa-solid fa-cart-shopping"></i>Course Shop</button></a></h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/92Zb7nOaYF76EqegsNqoiz2aKwN8HeO0IbLCyzW5i1Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9kYXRhLXNjaWVu/Y2UtYnVzaW5lc3Mt/aW50ZXJuZXQtdGVj/aG5vbG9neS1jb25j/ZXB0LXNlcnZlci1y/b29tLWJhY2tncm91/bmRfMTYxNDUyLTk3/NTguanBnP3NlbXQ9/YWlzX2h5YnJpZA" alt="data-science-icon" />
+            <h3 class="card-title">Data Science</h3>
+          </div>
+          <p class="description">Unlock Career Opportunities with Data Science - Learn how data-driven decision-making can transform industries and boost your career with our expert-led courses and resources...</p>
+          <button class="button"><a href="{%url 'cart'%}"> More Info</a></button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/RG4mxrMFJAhB6Teeq_TV5cKEROu-RA4paaKL5Bfumko/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzM2LzUxLzQ0/LzM2MF9GXzEzNjUx/NDQ4OF9qMXU4NjNn/aDUwZnNScUlGUURI/SW4xSFc3SmVIUEpW/ei5qcGc" alt="software-testing-icon" />
+            <h3 class="card-title">Software Testing</h3>
+          </div>
+          <p class="description">Ensure Quality with Software Testing – Learn the fundamentals of software testing, including manual and automated testing techniques, to deliver bug-free and reliable applications....</p>
+          <button class="button"><a href="{%url 'enquiry'%}"> More Info</a></button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/Ku7O1OX_HMQlplGmcHzT36QfRYFijkoe3TIUxlZ9XyI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWluZGludmVudG9y/eS5jb20vaW1nL2Zl/YXR1cmVkLWluc2ln/aHRzL3doeS1jaG9v/c2UtcHl0aG9uLWZv/ci1lbnRlcnByaXNl/LXNvZnR3YXJlLWRl/dmVsb3BtZW50Lndl/YnA" alt="python-icon" />
+            <h3 class="card-title">Python Full Stack</h3>
+          </div>
+          <p class="description">Unlock your potential with our Python Full Stack Development course! Develop skills and to build dynamic, real-world web applications and kickstart your career in tech....</p>
+          <button class="button"><a href="{%url 'enquiry'%}"> More Info</a></button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/TYWptkqXCIkylIt9uHzpcpOrAx9Y0zkIlYR0rliWZQE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZWVrc2Zvcmdl/ZWtzLm9yZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMzA5MjYx/NjMzMzgvSmF2YS1G/dWxsLVN0YWNrLnBu/Zw" alt="java-icon" />
+            <h3 class="card-title">Java Full Stack</h3>
+          </div>
+          <p class="description">Become a Java Full Stack expert with our comprehensive course! Learn to build robust, scalable web applications by mastering both front-end and back-end technologies with Java...</p>
+          <button class="button"><a href="{%url 'enquiry'%}">More Info</a></button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/JAY6QTFkBRyOwC4wTzZ2euOq9059U9UZPNqKdLHI1XA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3LzExLzI2LzYw/LzM2MF9GXzcxMTI2/NjA1M192azRtZ05o/S3lVWHFGZ3hFdVE4/eE9Ra0tRMDNmZzdW/ai5qcGc" alt="data-analytics-icon" />
+            <h3 class="card-title">Data Analytics</h3>
+          </div>
+          <p class="description">Transform data into actionable insights with our Data Analytics course! Learn powerful techniques in data analysis, visualization, and reporting to drive informed decision-making and advance your career...</p>
+          <button class="button"><a href="{%url 'enquiry'%}">More Info</a></button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/AgQ39c1NKOZpXXF_MdLi6KZmmGzGcCACKWQBQdN0-H0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzY1LzI1LzQ5/LzM2MF9GXzI2NTI1/NDkxNV9SRjNjQ1hy/VVhkNzUyVGxDRTA2/R2dYZkxEcHh4ZjVn/eC5qcGc" alt=".net-icon" />
+            <h3 class="card-title">Artificial Intelligence</h3>
+          </div>
+          <p class="description">Artificial Intelligence (AI) is transforming industries by enabling machines to learn, adapt, and make decisions, driving innovation and efficiency across various sectors.</p>
+          <button class="button"><a href="{%url 'enquiry'%}"> More Info</a></button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/H2KafZmBFN7Kb-zRZixC-o7uK_fIL9HelzDlJz1dC4I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXJ0c3lsdGVjaC5j/b20vaW1nL2Jsb2dz/L21hY2hpbmUtbGVh/cm5pbmctaW1hZ2Ut/cHJvY2Vzc2luZy5q/cGc" alt="ml-icon" />
+            <h3 class="card-title">Machine Learning</h3>
+          </div>
+          <p class="description">Unlock the power of data with our Machine Learning course! Learn how to build intelligent models, analyze patterns, and solve real-world problems using cutting-edge algorithms and techniques....</p>
+          <button class="button"><a href="{%url 'enquiry'%}"> More Info</a></button>
+        </div>
+        
+        
+        
+        <div class="card">
+          <div class="card-header">
+            <img src="https://imgs.search.brave.com/LHPkoZdNRl0VD7WwTUkO0Py1GRuUhVeJ2LNUiJDJawc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZWVrc2Zvcmdl/ZWtzLm9yZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMzEyMDUx/NjU5MDQvd2ViLWRl/dmVsb3BtZW50LWlt/YWdlLndlYnA" alt="webapp-icon" />
+            <h3 class="card-title">Wep App Development</h3>
+          </div>
+          <p class="description">Build dynamic, responsive web applications with our Web App Development course! Learn essential front-end and back-end skills to create innovative, user-friendly web solutions for real-world challenges....</p>
+          <button class="button"><a href="{%url 'enquiry'%}">More Info</a></button>
+        </div>
+      </div>
+    </div>
+    
+    <button class="open-btn" onclick="toggleNav()">☰</button>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+  <a href="{%url 'home'%}">Home</a>
+  <a href="{%url 'job'%}">Jobs</a>
+  <a href="{%url 'about'%}">About Us</a>
+  <a href="#footer">Contact Us</a>
+
+  
+</div>
+
+
+
+
+<footer id="footer">
+  <div class="footer-container">
+      <div class="footer-section about">
+          <h3>About Us</h3>
+          <p>Campus 2 Career connects job seekers with top employers, offering career opportunities across IT, non-IT, and various industries.</p>
+      </div>
+      <div class="footer-section categories">
+          <h3>Course Categories</h3>
+          <ul>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">Finance & Accounting</a></li>
+              <li><a href="#">Data Analytics</a></li>
+          </ul>
+      </div>
+      <div class="footer-section resources">
+          <h3>Resources</h3>
+          <ul>
+              <li><a href="#">Resume Tips</a></li>
+              <li><a href="#">Interview Preparation</a></li>
+              <li><a href="#">Practice session</a></li>
+              <li><a href="#">Career Advice</a></li>
+              <li><a href="{% url 'job' %}">Job Alerts</a></li>
+          </ul>
+      </div>
+      <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>Email: support@campus2career.com</p>
+          <p>Phone: +91 86085 45663</p>
+          <p>Address: 131 2nd St, KK Nagar, Chennai-600078</p>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/zoho" class="face"><i class="fab fa-facebook"></i></a>
+              <a href="https://x.com/Zoho" class="x"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.linkedin.com/company/zoho/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/zoho?igsh=ejJvOTluNG1yNHZw" class="insta"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2025 Campus 2 Career | All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  function toggleNav() {
+  var sidebar = document.getElementById("mySidebar");
+  sidebar.classList.toggle("open");
+}
+
+</script>
+  </body>
+</html> 
+
+
+ 

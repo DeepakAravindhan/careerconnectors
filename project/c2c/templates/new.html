@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2C - Sign Up</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #2ebf91;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #27a57c;
+        }
+
+        .login-link {
+            display: block;
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Make the border round by default */
+            border: 2px solid transparent; /* Transparent border by default */
+            text-decoration: none;
+        }
+        .face:hover{
+            background-color:#17A9FD;
+            color:white;
+            
+        }
+        .x:hover{
+            background-color:black;
+            color:white;
+            
+        }
+        .google:hover{
+            background-color:#4285f4;
+            color:white;
+            
+        }
+        .social-icons a:hover {
+           
+            border-radius: 50%; /* Ensure the border remains round on hover */
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="{% static 'videos/bg-video.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="container">
+        <form action="{% url 'signup' %}" method="post" id="signupform">
+            {% csrf_token %}
+            <h1>Create Account</h1>
+            <input type="text" placeholder="Name" name="name" id="name" required />
+            <input type="email" placeholder="Email" name="email" id="email" required />
+            <input type="password" id="signupPassword" name="password" placeholder="Password" required />
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+            <span id="passwordError" class="error-message"></span>
+            <span id="formError" class="error-message"></span>
+            <button type="submit">Sign Up</button>
+            <a href="{% url 'login' %}" class="login-link">Already have an account? Login here</a>
+            <div class="social-icons">
+                <a href="#" tabindex="0" class="face"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" tabindex="0" class="x"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" tabindex="0" class="google"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Password validation script
+        const passwordInput = document.getElementById('signupPassword');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const passwordError = document.getElementById('passwordError');
+
+        function validatePassword(password) {
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return regex.test(password);
+        }
+
+        document.getElementById('signupform').addEventListener('submit', function (e) {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (!validatePassword(password)) {
+                passwordError.textContent =
+                    'Password must have at least 8 characters, including one uppercase, one lowercase, one number, and one special character.';
+                e.preventDefault();
+            } else if (password !== confirmPassword) {
+                passwordError.textContent = 'Passwords do not match.';
+                e.preventDefault();
+            } else {
+                passwordError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

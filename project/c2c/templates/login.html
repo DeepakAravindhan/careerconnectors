@@ -1,0 +1,215 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2C - Login</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo1.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        input:focus {
+            border-color: #2ebf91;
+            box-shadow: 0 0 5px rgba(46, 191, 145, 0.5);
+            outline: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #2ebf91;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #27a57c;
+        }
+
+        /* Signup Link Styling */
+        .signup-text {
+            font-size: 14px;
+            color: #333;
+            margin-top: 25px;
+        }
+
+        .signup-link {
+            display: inline;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .signup-link:hover {
+            border: 2px solid transparent;
+            border-radius: 25%;
+            color: black;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: black;
+            font-size: 24px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            text-decoration: none;
+        }
+
+        .face:hover {
+            background-color: #17A9FD;
+            color: white;
+        }
+
+        .x:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .google:hover {
+            background-color: #4285f4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="{% static 'videos/bg-video.mp4' %}" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Login Form -->
+    <div class="container">
+        <form action="{% url 'login' %}" method="post" id="loginForm">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <!-- Display error messages -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="error-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <input type="email" placeholder="Email" name="email" id="email" required />
+            <input type="password" id="password" name="password" placeholder="Password" required />
+            <span id="loginError" class="error-message"></span>
+            <button type="submit">Log In</button>
+            <br>
+            <span class="signup-text">Don't have an account? </span>
+            <a href="{% url 'signup' %}" class="signup-link">Sign Up here</a><br>
+            <a href="{% url 'signup' %}" class="signup-link" style="margin-top: 5px;">Forgot password</a>
+            <div class="social-icons">
+                <a href="#" class="face"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="x"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="google"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Login Form Validation
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+
+        loginForm.addEventListener('submit', function (e) {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validation
+            if (!email || !password) {
+                loginError.textContent = 'Please fill in all fields.';
+                e.preventDefault();  // Prevent form submission if validation fails
+            }
+        });
+    </script>
+</body>
+</html>

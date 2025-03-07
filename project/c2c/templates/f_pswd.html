@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus 2 Career</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="stylesheet" href="f_pswd.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="https://videos.pexels.com/video-files/853919/853919-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form action="#" id="forgotPasswordForm">
+                <h1>Forgot Password</h1>
+                <p>Enter your registered email address to receive an OTP.</p>
+                <input type="email" id="email" placeholder="Registered Email ID" required />
+                <span id="emailError" class="error-message"></span>
+                <button class="but" style="background-color:black;"><a href="#" id="sendOtp" style="color: white;">Send OTP</a></button>
+                
+                <input type="text" id="otp" placeholder="Enter OTP" required style="display: none;"/>
+                <span id="otpError" class="error-message"></span>
+                <button type="submit" id="verifyOtp" style="display: none;">Verify OTP</button>
+                
+                <a href="login.html">Back to Login <span style="color: black;">!</span></a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendOtp').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('emailError');
+            
+            if (!validateEmail(email)) {
+                emailError.textContent = "Please enter a valid registered email address.";
+            } else {
+                emailError.textContent = "";
+                alert("OTP has been sent to your email.");
+                document.getElementById('otp').style.display = 'block';
+                document.getElementById('verifyOtp').style.display = 'block';
+            }
+        });
+        
+        document.getElementById('verifyOtp').addEventListener('click', function(e) {
+            e.preventDefault();
+            const otp = document.getElementById('otp').value;
+            const otpError = document.getElementById('otpError');
+            
+            if (otp.length !== 6) {
+                otpError.textContent = "Invalid OTP. Please try again.";
+            } else {
+                otpError.textContent = "";
+                alert("OTP verified successfully! Redirecting to home page.");
+                window.location.href = "home.html";
+            }
+        });
+        
+        function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+    </script>
+</body>
+</html>

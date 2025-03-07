@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus 2 Career</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        .container {
+            background-color: #9a9898;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            color: #2b2a2a;
+            text-align: center;
+        }
+        p {
+            font-size: 14px;
+            color: #444;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            color: #3f3f3f;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .phone-container {
+            display: flex;
+        }
+        .phone-container input:first-child {
+            width: 20%;
+            margin-right: 5px;
+            text-align: center;
+            background-color: #e9ecef;
+        }
+        button {
+            background-color: #4b4b49;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #141313;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>We are excited to get started with you</h2>
+        <p>Provide your details, and we will arrange a free consultation call at your convenience.</p>
+        <form>
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Your Email Address *</label>
+            <input type="email" id="email" required>
+            
+            <label for="mobile">Mobile Number *</label>
+            <div class="phone-container">
+                <input type="text" value="+91" disabled>
+                <input type="text" id="mobile" required>
+            </div>
+            
+            <label for="course">Course you are interested in? *</label>
+            <select id="course" required>
+                <option value="">Select a course</option>
+                <option value="course1">Python full Stack</option>
+                <option value="course2">Java full Stack</option>
+                <option value="course2">Dotnet</option>
+                <option value="course2">Mern Stack</option>
+                <option value="course2">Data Science</option>
+                <option value="course2">Data Analytics</option>
+                <option value="course2">AI </option>
+
+
+
+            </select>
+            
+            <label for="location">Preferred Location *</label>
+            <select id="location" required>
+                <option value="">Select a location</option>
+                <option value="location1">Bangalore</option>
+                <option value="location2">Chennai</option>
+            </select>
+            
+            <label for="timeslot">Preferred Time Slot *</label>
+            <select id="timeslot" required>
+                <option value="">Select a timeslot</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+            </select>
+            
+            <button type="submit">Let's Get Started! ✨</button>
+        </form>
+    </div>
+</body>
+</html>
