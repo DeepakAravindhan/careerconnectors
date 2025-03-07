@@ -87,11 +87,11 @@ environ.Env.read_env()
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": env("railway"),
-        "USER": env("root"),
-        "PASSWORD": env("whUMLYUOLKXWjgBIxUIkZtnALItqSeii"),
-        "HOST": env("mysql.railway.internal"),
-        "PORT": env("3306"),
+        "NAME": env("DATABASE_NAME"),  
+        "USER": env("DATABASE_USER"),
+        "PASSWORD": env("DATABASE_PASSWORD"),
+        "HOST": env("DATABASE_HOST"),  # Railway MySQL internal host
+        "PORT": env("DATABASE_PORT", default="3306"),
     }
 }
 
